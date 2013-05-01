@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageButton
+        android:id="@+id/btnOpenFaecher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="162dp"
+        android:src="@drawable/icon_unterrichtsfaecher" />
+
+    <ImageButton
+        android:id="@+id/btnDeleteStundenplan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnOpenFaecher"
+        android:layout_toRightOf="@+id/btnOpenFaecher"
+        android:src="@drawable/icon_loeschenstundenplan" />
+
+    <TextView
+        android:id="@+id/tVOpenFaecher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnOpenFaecher"
+        android:layout_alignRight="@+id/btnOpenFaecher"
+        android:layout_below="@+id/btnOpenFaecher"
+        android:gravity="center_horizontal"
+        android:text="Fächer" />
+
+    <TextView
+        android:id="@+id/tVDeleteStundenplan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tVOpenFaecher"
+        android:layout_alignBottom="@+id/tVOpenFaecher"
+        android:layout_alignLeft="@+id/btnDeleteStundenplan"
+        android:layout_alignRight="@+id/btnDeleteStundenplan"
+        android:gravity="center_horizontal"
+        android:text="Löschen" />
+
+</RelativeLayout>

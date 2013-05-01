@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -8,9 +9,43 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Home" >
 
-    <TextView
+    <ImageButton
+        android:id="@+id/btnOpenOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignTop="@+id/btnOpenStundenplan"
+        android:layout_toRightOf="@+id/btnOpenStundenplan"
+        android:onClick="OpenOptions_OnClick"
+        android:src="@drawable/icon_options" />
+
+    <TextView
+        android:id="@+id/tVOpenStundenplan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnOpenStundenplan"
+        android:layout_below="@+id/btnOpenStundenplan"
+        android:layout_toLeftOf="@+id/tVOpenOptions"
+        android:gravity="center_horizontal"
+        android:text="Stundenplan" />
+
+    <TextView
+        android:id="@+id/tVOpenOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tVOpenStundenplan"
+        android:layout_alignBottom="@+id/tVOpenStundenplan"
+        android:layout_alignLeft="@+id/btnOpenOptions"
+        android:layout_alignRight="@+id/btnOpenOptions"
+        android:gravity="center_horizontal"
+        android:text="Optionen" />
+
+    <ImageButton
+        android:id="@+id/btnOpenStundenplan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="152dp"
+        android:src="@drawable/icon_class" />
 
 </RelativeLayout>
