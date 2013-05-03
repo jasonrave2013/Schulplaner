@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7d86f" >
+    
+    <ListView
+        android:id="@+id/ListVSubjectsDetails"
+        android:layout_width="283dp"
+        android:layout_height="184dp"
+        android:layout_above="@+id/btnBackFromFaecher"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/borderui" />
+    
+    <ListView
+        android:id="@+id/ListVSubjects"
+        android:layout_width="237dp"
+        android:layout_height="182dp"
+        android:layout_above="@+id/btnBackFromFaecher"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:scrollbarStyle="insideInset"
+        android:layout_toLeftOf="@+id/ListVSubjectsDetails"
+        android:background="@drawable/borderui" />
+
+    <ImageButton
+        android:id="@+id/btnBackFromFaecher"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:maxHeight="75dp"
+        android:maxWidth="100dp"
+        android:onClick="BackFromFaecher_OnClick"
+        android:src="@drawable/icon_back" />
+    
+    <ImageButton
+        android:id="@+id/btnSubjectAdd"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignRight="@+id/ListVSubjects"
+        android:layout_below="@+id/ListVSubjects"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/icon_add"
+        android:maxHeight="75dp"
+        android:maxWidth="75dp"
+        android:text="Anlegen" />
+    
+    <ImageButton
+        android:id="@+id/btnSubjectDelete"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignLeft="@+id/ListVSubjectsDetails"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/icon_delete"
+        android:maxHeight="75dp"
+        android:maxWidth="75dp"
+        android:text="Löschen" />
+
+</RelativeLayout>
