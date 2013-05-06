@@ -25,12 +25,19 @@ public class Subjects extends Activity {
 	
 	String[] SubjectItemsDetails = {"Name: Deutsch", "Lehrer: Herr Schneider", "Raum: 208"};
 	
-	ListView lvSubjectsDetails = (ListView) findViewById(R.id.ListVSubjectsDetails); //Referenz der Liste auf das Control der View
+	ListView lvSubjectsDetails = (ListView) findViewById(R.id.ListVSubjectsDetails);
 	
 	lvSubjectsDetails.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, SubjectItemsDetails));
 	/* BEISPIEL End*/
 	
 	    // TODO Auto-generated method stub
+	}
+	
+	public void SubjectAdd_OnClick(View v)
+	{
+		Intent myIntent = new Intent(v.getContext(),
+		  NewSubject.class);
+		startActivityForResult(myIntent, 0);
 	}
 	
 	public void BackFromFaecher_OnClick(View v)

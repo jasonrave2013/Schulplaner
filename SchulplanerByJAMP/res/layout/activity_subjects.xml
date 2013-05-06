@@ -42,11 +42,12 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_alignRight="@+id/ListVSubjects"
-        android:layout_below="@+id/ListVSubjects"
+        android:layout_alignTop="@+id/btnSubjectDelete"
         android:layout_marginRight="25dp"
         android:background="@drawable/icon_add"
         android:maxHeight="75dp"
         android:maxWidth="75dp"
+        android:onClick="SubjectAdd_OnClick"
         android:text="Anlegen" />
     
     <ImageButton

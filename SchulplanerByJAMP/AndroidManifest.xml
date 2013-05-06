@@ -24,6 +24,7 @@
         </activity>
         <activity android:name="Options"></activity>
         <activity android:name="Subjects"></activity>
+        <activity android:name="NewSubject"></activity>
     </application>
 
 </manifest>

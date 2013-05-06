@@ -32,27 +32,36 @@ public final class R {
         public static final int icon_unterrichtsfaecher=0x7f020008;
     }
     public static final class id {
-        public static final int Home=0x7f080000;
-        public static final int ListVSubjects=0x7f08000c;
-        public static final int ListVSubjectsDetails=0x7f08000a;
-        public static final int action_settings=0x7f08000f;
-        public static final int btnBackFromFaecher=0x7f08000b;
-        public static final int btnBackFromOptions=0x7f080009;
-        public static final int btnDeleteStundenplan=0x7f080005;
-        public static final int btnOpenFaecher=0x7f080006;
-        public static final int btnOpenOptions=0x7f080001;
-        public static final int btnOpenStundenplan=0x7f080002;
-        public static final int btnSubjectAdd=0x7f08000d;
-        public static final int btnSubjectDelete=0x7f08000e;
-        public static final int tVDeleteStundenplan=0x7f080008;
-        public static final int tVOpenFaecher=0x7f080007;
-        public static final int tVOpenOptions=0x7f080004;
-        public static final int tVOpenStundenplan=0x7f080003;
+        public static final int EditTAddLehrerBez=0x7f080003;
+        public static final int EditTAddNameBez=0x7f080005;
+        public static final int EditTAddRaumBez=0x7f080001;
+        public static final int Home=0x7f080008;
+        public static final int ListVSubjects=0x7f080014;
+        public static final int ListVSubjectsDetails=0x7f080012;
+        public static final int action_settings=0x7f080017;
+        public static final int btnBackFromFaecher=0x7f080013;
+        public static final int btnBackFromNewSubject=0x7f080006;
+        public static final int btnBackFromOptions=0x7f080011;
+        public static final int btnDeleteStundenplan=0x7f08000d;
+        public static final int btnFinalAddSubject=0x7f080007;
+        public static final int btnOpenFaecher=0x7f08000e;
+        public static final int btnOpenOptions=0x7f080009;
+        public static final int btnOpenStundenplan=0x7f08000a;
+        public static final int btnSubjectAdd=0x7f080015;
+        public static final int btnSubjectDelete=0x7f080016;
+        public static final int tVAddLehrerBez=0x7f080002;
+        public static final int tVAddNameBez=0x7f080004;
+        public static final int tVAddRaumBez=0x7f080000;
+        public static final int tVDeleteStundenplan=0x7f080010;
+        public static final int tVOpenFaecher=0x7f08000f;
+        public static final int tVOpenOptions=0x7f08000c;
+        public static final int tVOpenStundenplan=0x7f08000b;
     }
     public static final class layout {
-        public static final int activity_home=0x7f030000;
-        public static final int activity_options=0x7f030001;
-        public static final int activity_subjects=0x7f030002;
+        public static final int acitivity_newsubject=0x7f030000;
+        public static final int activity_home=0x7f030001;
+        public static final int activity_options=0x7f030002;
+        public static final int activity_subjects=0x7f030003;
     }
     public static final class menu {
         public static final int home=0x7f070000;

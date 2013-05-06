@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7d86f" >
+
+    <TextView
+        android:id="@+id/tVAddRaumBez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/EditTAddRaumBez"
+        android:layout_alignBottom="@+id/EditTAddRaumBez"
+        android:layout_alignLeft="@+id/tVAddLehrerBez"
+        android:text="Raum:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tVAddLehrerBez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/EditTAddLehrerBez"
+        android:layout_alignBottom="@+id/EditTAddLehrerBez"
+        android:layout_alignLeft="@+id/tVAddNameBez"
+        android:text="Lehrer:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tVAddNameBez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/EditTAddNameBez"
+        android:layout_alignBottom="@+id/EditTAddNameBez"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:text="Name:"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/EditTAddNameBez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/EditTAddLehrerBez"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/borderui"
+        android:ems="10"
+        android:inputType="text|textPersonName"
+        android:textSize="20sp" >
+        
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/EditTAddLehrerBez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/EditTAddRaumBez"
+        android:layout_below="@+id/EditTAddNameBez"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/borderui"
+        android:ems="10"
+        android:inputType="text|textPersonName"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/EditTAddRaumBez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditTAddLehrerBez"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/borderui"
+        android:ems="10"
+        android:inputType="text|textPersonName"
+        android:textSize="20sp" />
+
+    <ImageButton
+        android:id="@+id/btnBackFromNewSubject"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:maxHeight="75dp"
+        android:maxWidth="100dp"
+        android:onClick="BackFromNewSubject_OnClick"
+        android:src="@drawable/icon_back" />
+
+    <Button
+        android:id="@+id/btnFinalAddSubject"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/btnBackFromNewSubject"
+        android:layout_centerHorizontal="true"
+        android:maxHeight="75dp"
+        android:maxWidth="150dp"
+        android:minHeight="75dp"
+        android:minWidth="150dp"
+        android:onClick="FinalAddSubject_OnClick"
+        android:text="Hinzufügen" />
+
+</RelativeLayout>
