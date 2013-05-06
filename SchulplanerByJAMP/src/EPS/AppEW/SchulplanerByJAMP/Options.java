@@ -28,19 +28,19 @@ public class Options extends Activity {
     public void DeleteStundenplan_OnClick(View v)
     {
     	new AlertDialog.Builder(this)
-          .setIcon(android.R.drawable.ic_delete)
-          .setTitle("Stundenplan löschen")
-          .setMessage("Soll der Stundenplan wirklich gelöscht werden?")
-          .setPositiveButton("Ja", new DialogInterface.OnClickListener()
-	      {
-	          @Override
-	          public void onClick(DialogInterface dialog, int which) 
-	          {
-	        	  // TODO @ALL: Stundenplantabelle leeren, etc.   
-	          }
-	      })
-	      .setNegativeButton("Nein", null)
-	      .show();
+        	.setIcon(android.R.drawable.ic_delete)
+        	.setTitle("Stundenplan löschen")
+        	.setMessage("Soll der Stundenplan wirklich gelöscht werden?")
+        	.setPositiveButton("Ja", new DialogInterface.OnClickListener()
+        	{
+        		@Override
+        		public void onClick(DialogInterface dialog, int which) 
+        		{
+        			// TODO @ALL: Stundenplantabelle leeren, etc.   
+        		}
+        	})
+        	.setNegativeButton("Nein", null)
+        	.show();
     }
     
     public void BackFromOptions_OnClick(View v)

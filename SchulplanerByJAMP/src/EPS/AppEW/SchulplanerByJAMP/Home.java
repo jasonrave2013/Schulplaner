@@ -16,10 +16,17 @@ public class Home extends Activity {
         setContentView(R.layout.activity_home); //Verknüpfung der Klasse mit der Layoutdatei
     }
     
+    public void OpenStundenplan_OnClick(View v)
+    {
+    	Intent myIntent = new Intent(v.getContext(),
+    	  Schedule.class); //v.getContext=Referenz auf den gerade ausgeführten View
+    	startActivityForResult(myIntent, 0);
+    } 
+    
     public void OpenOptions_OnClick(View v)
     {
     	Intent myIntent = new Intent(v.getContext(),
-    	  Options.class); //v.getContext=Referenz auf den gerade ausgeführten View
+    	  Options.class);
     	startActivityForResult(myIntent, 0);
     } 
 

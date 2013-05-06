@@ -29,16 +29,19 @@ public class NewSubject extends Activity {
 		EditText SubjRoom = (EditText) findViewById(R.id.EditTAddRaumBez);
 		String strRoom = SubjRoom.getText().toString();
 		
-		if ((strName.length() == 0) || (strTeacher.length() == 0) || strRoom.length() == 0) {
-    	  new AlertDialog.Builder(this)
-            .setIcon(android.R.drawable.ic_dialog_alert)
-            .setTitle("Angaben unvollständig")
-            .setMessage("Es wurden nicht alle Felder ausgefüllt!")
-            .setNeutralButton("OK", null)
-	        .show();
-	      return;
+		if ((strName.length() == 0) || (strTeacher.length() == 0) || strRoom.length() == 0) 
+		{
+			new AlertDialog.Builder(this)
+	        	.setIcon(android.R.drawable.ic_dialog_alert)
+	        	.setTitle("Angaben unvollständig")
+	        	.setMessage("Es wurden nicht alle Felder ausgefüllt!")
+	        	.setNeutralButton("OK", null)
+	        	.show();
+			return;
 		}
+		
 		// TODO @Pascal: Instanzierung der Klasse, etc.
+		
 		Intent myIntent = new Intent(v.getContext(),
 		  Subjects.class);
 		startActivityForResult(myIntent, 0);

@@ -44,6 +44,7 @@
         android:layout_marginTop="26dp"
         android:background="@drawable/borderui"
         android:ems="10"
+        android:gravity="center"
         android:inputType="text|textPersonName"
         android:textSize="20sp" >
         
@@ -59,6 +60,7 @@
         android:layout_marginTop="35dp"
         android:background="@drawable/borderui"
         android:ems="10"
+        android:gravity="center"
         android:inputType="text|textPersonName"
         android:textSize="20sp" />
 
@@ -71,6 +73,7 @@
         android:layout_marginTop="34dp"
         android:background="@drawable/borderui"
         android:ems="10"
+        android:gravity="center"
         android:inputType="text|textPersonName"
         android:textSize="20sp" />
 
