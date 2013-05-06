@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/btnOpenFaecher"
         android:layout_toRightOf="@+id/btnOpenFaecher"
+        android:onClick="DeleteStundenplan_OnClick"
         android:src="@drawable/icon_loeschenstundenplan" />
 
     <TextView
