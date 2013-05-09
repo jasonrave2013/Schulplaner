@@ -1,13 +1,17 @@
 package EPS.AppEW.SchulplanerByJAMP;
 
+import EPS.AppEW.SchulplanerByJAMP.dao.LessonDao;
+import EPS.AppEW.SchulplanerByJAMP.entity.Lesson;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class NewSubject extends Activity {
+	private LessonDao lessonDao;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -16,6 +20,8 @@ public class NewSubject extends Activity {
 	    setContentView(R.layout.acitivity_newsubject);
 	
 	    // TODO Auto-generated method stub
+	    lessonDao = new LessonDao(this);
+		lessonDao.open();
 	}
 	
 	public void FinalAddSubject_OnClick(View v)
@@ -40,7 +46,15 @@ public class NewSubject extends Activity {
 			return;
 		}
 		
-		// TODO @Pascal: Instanzierung der Klasse, etc.
+		Lesson l = new Lesson();
+		l.setName(strName);
+		l.setTeacher(strTeacher);
+		l.setRoom(strRoom);
+		
+		l = lessonDao.createLesson(l);
+		lessonDao.close();
+		
+		Toast.makeText(this, "Lesson: " + l.getName() + "(id - " + l.getId() + ") created.", Toast.LENGTH_LONG).show();
 		
 		Intent myIntent = new Intent(v.getContext(),
 		  Subjects.class);

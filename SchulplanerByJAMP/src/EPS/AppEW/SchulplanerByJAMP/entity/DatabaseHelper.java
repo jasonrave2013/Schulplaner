@@ -17,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 	public static final String COLUMN_ROOM = "room";
 	public static final String COLUMN_NOTE = "note";
 	
-	private static final String CREATE_TABLE_LESSON = "CREATE TABLE" + TABLE_LESSON + "("
+	private static final String CREATE_TABLE_LESSON = "CREATE TABLE " + TABLE_LESSON + "("
 			+ COLUMN_ID + " integer primary key autoincrement, " 
 			+ COLUMN_NAME + " text not null, " 
 			+ COLUMN_TEACHER + " text, "

@@ -11,6 +11,10 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+/**
+ * This class privides services to handle database transacgtions.
+ * @author pascal.perau
+ */
 public class LessonDao {
 
 	private SQLiteDatabase db;
@@ -47,13 +51,13 @@ public class LessonDao {
 		return newLesson;
 	}
 	
-	public void deleteComment(Lesson lesson) {
+	public void deleteLesson(Lesson lesson) {
 	    long id = lesson.getId();
 	    System.out.println("Lesson deleted with id: " + id);
 	    db.delete(DatabaseHelper.TABLE_LESSON, DatabaseHelper.COLUMN_ID + " = " + id, null);
 	  }
 
-	  public List<Lesson> getAllComments() {
+	  public List<Lesson> getAllLessons() {
 	    List<Lesson> lessons = new ArrayList<Lesson>();
 
 	    Cursor cursor = db.query(DatabaseHelper.TABLE_LESSON, columns, null, null, null, null, null);

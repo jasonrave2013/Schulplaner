@@ -1,5 +1,9 @@
 package EPS.AppEW.SchulplanerByJAMP;
 
+import java.util.List;
+
+import EPS.AppEW.SchulplanerByJAMP.dao.LessonDao;
+import EPS.AppEW.SchulplanerByJAMP.entity.Lesson;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,12 +12,22 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Subjects extends Activity {
+	
+	private LessonDao lessonDao;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_subjects);
+	    
+	    // TODO @Andre: hier sind alle Fächer
+	    lessonDao = new LessonDao(this);
+	    lessonDao.open();
+	    List<Lesson> lessons = lessonDao.getAllLessons();
+	    System.out.println(lessons.size());
+	    lessonDao.close();
+	    
 	
 	/* BEISPIEL Begin*/
 	String[] SubjectItems = {"Deutsch", "Mathe", "Englisch", "Wirtschaftslehre", "Geografie"};

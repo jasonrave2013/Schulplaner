@@ -14,6 +14,7 @@ public class Home extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home); //Verknüpfung der Klasse mit der Layoutdatei
+        
     }
     
     public void OpenStundenplan_OnClick(View v)
