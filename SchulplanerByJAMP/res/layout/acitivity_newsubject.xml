@@ -15,16 +15,6 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/tVAddLehrerBez"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/EditTAddLehrerBez"
-        android:layout_alignBottom="@+id/EditTAddLehrerBez"
-        android:layout_alignLeft="@+id/tVAddNameBez"
-        android:text="Lehrer:"
-        android:textSize="20sp" />
-
-    <TextView
         android:id="@+id/tVAddNameBez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +29,7 @@
         android:id="@+id/EditTAddNameBez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/EditTAddLehrerBez"
+        android:layout_alignLeft="@+id/EditTAddRaumBez"
         android:layout_alignParentTop="true"
         android:layout_marginTop="26dp"
         android:background="@drawable/borderui"
@@ -47,35 +37,9 @@
         android:gravity="center"
         android:inputType="text|textPersonName"
         android:textSize="20sp" >
-        
+
         <requestFocus />
     </EditText>
-
-    <EditText
-        android:id="@+id/EditTAddLehrerBez"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/EditTAddRaumBez"
-        android:layout_below="@+id/EditTAddNameBez"
-        android:layout_marginTop="35dp"
-        android:background="@drawable/borderui"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="text|textPersonName"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/EditTAddRaumBez"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/EditTAddLehrerBez"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
-        android:background="@drawable/borderui"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="text|textPersonName"
-        android:textSize="20sp" />
 
     <ImageButton
         android:id="@+id/btnBackFromNewSubject"
@@ -101,5 +65,38 @@
         android:minWidth="150dp"
         android:onClick="FinalAddSubject_OnClick"
         android:text="Hinzufügen" />
+
+    <EditText
+        android:id="@+id/EditTAddRaumBez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tVAddLehrerBez"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/borderui"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text|textPersonName"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tVAddLehrerBez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tVAddNameBez"
+        android:layout_below="@+id/tVAddNameBez"
+        android:layout_marginTop="17dp"
+        android:text="Lehrer:"
+        android:textSize="20sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tVAddLehrerBez"
+        android:layout_alignBottom="@+id/tVAddLehrerBez"
+        android:layout_alignLeft="@+id/EditTAddNameBez"
+        android:ems="10"
+        android:text="AutoCompleteTextView" />
 
 </RelativeLayout>

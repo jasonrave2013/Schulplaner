@@ -7,7 +7,7 @@ public class Lesson {
 
 	private String name;
 	
-	private String teacher;
+	private long teacher_ID;
 	
 	private String room;
 	
@@ -29,12 +29,12 @@ public class Lesson {
 		this.name = name;
 	}
 
-	public String getTeacher() {
-		return teacher;
+	public long getTeacher() {
+		return teacher_ID;
 	}
 
-	public void setTeacher(String teacher) {
-		this.teacher = teacher;
+	public void setTeacher(long teacher_ID) {
+		this.teacher_ID = teacher_ID;
 	}
 
 	public String getRoom() {
@@ -55,7 +55,7 @@ public class Lesson {
 
 	@Override
 	public String toString() {
-		return "Lesson [id=" + id + ", name=" + name + ", teacher=" + teacher
+		return "Lesson [id=" + id + ", name=" + name + ", teacher_ID=" + teacher_ID
 				+ ", room=" + room + ", note=" + note + "]";
 	}
 }

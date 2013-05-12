@@ -21,9 +21,9 @@ public class LessonDao {
 
 	private DatabaseHelper dbHelper;
 
-	private String[] columns = { DatabaseHelper.COLUMN_ID,
-			DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_TEACHER,
-			DatabaseHelper.COLUMN_ROOM, DatabaseHelper.COLUMN_NOTE };
+	private String[] columns = { DatabaseHelper.TABLE_LESSON_COLUMN_ID,
+			DatabaseHelper.TABLE_LESSON_COLUMN_NAME, DatabaseHelper.TABLE_LESSON_COLUMN_TEACHER,
+			DatabaseHelper.TABLE_LESSON_COLUMN_ROOM, DatabaseHelper.TABLE_LESSON_COLUMN_NOTE };
 
 	public LessonDao(Context context) {
 		dbHelper = new DatabaseHelper(context);
@@ -39,12 +39,12 @@ public class LessonDao {
 	
 	public Lesson createLesson(Lesson persistableLesson){
 		ContentValues values = new ContentValues();
-		values.put(DatabaseHelper.COLUMN_NAME, persistableLesson.getName());
-		values.put(DatabaseHelper.COLUMN_TEACHER, persistableLesson.getTeacher());
-		values.put(DatabaseHelper.COLUMN_ROOM, persistableLesson.getRoom());
-		values.put(DatabaseHelper.COLUMN_NOTE, persistableLesson.getNote());
+		values.put(DatabaseHelper.TABLE_LESSON_COLUMN_NAME, persistableLesson.getName());
+		values.put(DatabaseHelper.TABLE_LESSON_COLUMN_TEACHER, persistableLesson.getTeacher());
+		values.put(DatabaseHelper.TABLE_LESSON_COLUMN_ROOM, persistableLesson.getRoom());
+		values.put(DatabaseHelper.TABLE_LESSON_COLUMN_NOTE, persistableLesson.getNote());
 		long lessonId = db.insert(DatabaseHelper.TABLE_LESSON, null, values);
-		Cursor cursor = db.query(DatabaseHelper.TABLE_LESSON, columns, DatabaseHelper.COLUMN_ID + " = " + lessonId, null, null, null, null);
+		Cursor cursor = db.query(DatabaseHelper.TABLE_LESSON, columns, DatabaseHelper.TABLE_LESSON_COLUMN_ID + " = " + lessonId, null, null, null, null);
 		cursor.moveToFirst();
 		Lesson newLesson = cursorToLesson(cursor);
 		cursor.close();
@@ -54,7 +54,7 @@ public class LessonDao {
 	public void deleteLesson(Lesson lesson) {
 	    long id = lesson.getId();
 	    System.out.println("Lesson deleted with id: " + id);
-	    db.delete(DatabaseHelper.TABLE_LESSON, DatabaseHelper.COLUMN_ID + " = " + id, null);
+	    db.delete(DatabaseHelper.TABLE_LESSON, DatabaseHelper.TABLE_LESSON_COLUMN_ID + " = " + id, null);
 	  }
 
 	  public List<Lesson> getAllLessons() {
@@ -75,7 +75,7 @@ public class LessonDao {
 	    Lesson lesson = new Lesson();
 	    lesson.setId(cursor.getLong(0));
 	    lesson.setName(cursor.getString(1));
-	    lesson.setTeacher(cursor.getString(2));
+	    lesson.setTeacher(cursor.getLong(2));
 	    lesson.setRoom(cursor.getString(3));
 	    lesson.setNote(cursor.getString(4));
 	    return lesson;
