@@ -5,7 +5,7 @@ import java.util.List;
 
 import EPS.AppEW.SchulplanerByJAMP.entity.DatabaseHelper;
 import EPS.AppEW.SchulplanerByJAMP.entity.Lesson;
-import EPS.AppEW.SchulplanerByJAMP.entity.weekDay;
+import EPS.AppEW.SchulplanerByJAMP.entity.WeekDay;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -13,7 +13,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
- * This class privides services to handle database transacgtions.
+ * This class provides services to handle database transactions regarding weekdays.
  * @author janine.hoffmann
  */
 public class WeekDayDao {
@@ -38,7 +38,7 @@ public class WeekDayDao {
 	    dbHelper.close();
 	}
 	
-	public weekDay createWeekday(weekDay persistableWeekDay){
+	public WeekDay createWeekday(WeekDay persistableWeekDay){
 		ContentValues values = new ContentValues();
 		values.put(DatabaseHelper.TABLE_WEEKDAY_COLUMN_DAY, persistableWeekDay.getTag());
 		values.put(DatabaseHelper.TABLE_WEEKDAY_COLUMN_HOUR, persistableWeekDay.getStunde());
@@ -47,24 +47,26 @@ public class WeekDayDao {
 		long weekDayId = db.insert(DatabaseHelper.TABLE_WEEKDAY, null, values);
 		Cursor cursor = db.query(DatabaseHelper.TABLE_WEEKDAY, columns, DatabaseHelper.TABLE_WEEKDAY_COLUMN_ID + " = " + weekDayId, null, null, null, null);
 		cursor.moveToFirst();
-		weekDay newWeekDay = cursorToweekDay(cursor);
+		WeekDay newWeekDay = cursorToweekDay(cursor);
 		cursor.close();
 		return newWeekDay;
 	}
 	
-	public void deleteWeekday(weekDay weekday) {
+	public void deleteWeekday(WeekDay weekday) {
 	    long id = weekday.getId();
 	    System.out.println("Weekday deleted with id: " + id);
 	    db.delete(DatabaseHelper.TABLE_WEEKDAY, DatabaseHelper.TABLE_WEEKDAY_COLUMN_ID+ " = " + id, null);
 	  }
 
-	  public List<weekDay> getAllWeekDays() {
-	    List<weekDay> weekDays = new ArrayList<weekDay>();
+	  public List<WeekDay> getAllWeekDays() {
+	    List<WeekDay> weekDays = new ArrayList<WeekDay>();
+	    
+	    Cursor cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.TABLE_WEEKDAY + " a LEFT OUTER JOIN " + DatabaseHelper.TABLE_LESSON + " b ON a." + DatabaseHelper.TABLE_WEEKDAY_COLUMN_LESSONID + "= b." + DatabaseHelper.TABLE_LESSON_COLUMN_ID, null);
 
-	    Cursor cursor = db.query(DatabaseHelper.TABLE_WEEKDAY, columns, null, null, null, null, null);
+	    //Cursor cursor = db.query(DatabaseHelper.TABLE_WEEKDAY, columns, null, null, null, null, null);
 	    cursor.moveToFirst();
 	    while (!cursor.isAfterLast()) {
-	      weekDay l = cursorToweekDay(cursor);
+	      WeekDay l = cursorToweekDay(cursor);
 	      weekDays.add(l);
 	      cursor.moveToNext();
 	    }
@@ -72,12 +74,21 @@ public class WeekDayDao {
 	    return weekDays;
 	  }
 	
-	private weekDay cursorToweekDay(Cursor cursor) {
-	    weekDay weekday = new weekDay();
+	private WeekDay cursorToweekDay(Cursor cursor) {
+	    WeekDay weekday = new WeekDay();
 	    weekday.setId(cursor.getLong(0));
-	    weekday.setLessonId(cursor.getLong(1));
-	    weekday.setTag(cursor.getLong(2));
-	    weekday.setStunde(cursor.getLong(3));
+	    
+	    Lesson lesson = new Lesson();
+	    lesson.setId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.TABLE_LESSON_COLUMN_ID)));
+	    lesson.setName(cursor.getString(cursor.getColumnIndex(DatabaseHelper.TABLE_LESSON_COLUMN_NAME)));
+	    lesson.setTeacher(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.TABLE_LESSON_COLUMN_TEACHER)));
+	    lesson.setRoom(cursor.getString(cursor.getColumnIndex(DatabaseHelper.TABLE_LESSON_COLUMN_ROOM)));
+	    lesson.setNote(cursor.getString(cursor.getColumnIndex(DatabaseHelper.TABLE_LESSON_COLUMN_NOTE)));
+	    
+	    weekday.setLesson(lesson);
+	    weekday.setTag(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TABLE_WEEKDAY_COLUMN_DAY)));
+	    weekday.setStunde(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TABLE_WEEKDAY_COLUMN_HOUR)));
+	    
 	    return weekday;
 	  }
 	

@@ -29,7 +29,7 @@ public class Lesson {
 		this.name = name;
 	}
 
-	public long getTeacher() {
+	public long getTeacherId() {
 		return teacher_ID;
 	}
 

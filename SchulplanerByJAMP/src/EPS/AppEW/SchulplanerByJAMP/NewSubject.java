@@ -95,9 +95,7 @@ public class NewSubject extends Activity {
 		lessonDao.close();
 		
 		Toast.makeText(this, "Lesson: " + l.getName() + "(id - " + l.getId() + ") created.", Toast.LENGTH_LONG).show();
-		
-		Intent myIntent = new Intent(v.getContext(),
-		  Subjects.class);
+		Intent myIntent = new Intent(v.getContext(), Subjects.class);
 		startActivityForResult(myIntent, 0);
 	}
 	

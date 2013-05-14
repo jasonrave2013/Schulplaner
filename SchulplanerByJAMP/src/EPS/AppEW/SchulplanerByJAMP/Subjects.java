@@ -47,7 +47,7 @@ public class Subjects extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
 				Lesson l = lessons.get(position);
-				String[] details = {l.getName(), teacherDAO.getTeacherOfId(l.getTeacher()).getName(), l.getRoom()};
+				String[] details = {l.getName(), teacherDAO.getTeacherOfId(l.getTeacherId()).getName(), l.getRoom()};
 			    lvSubjectsDetails.setAdapter(new ArrayAdapter<String>(Subjects.this, android.R.layout.simple_list_item_1, details));
 			}
 		});

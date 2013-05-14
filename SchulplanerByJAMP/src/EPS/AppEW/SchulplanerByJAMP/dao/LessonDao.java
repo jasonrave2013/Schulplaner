@@ -12,7 +12,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
- * This class privides services to handle database transacgtions.
+ * This class provides services to handle database transactions regarding Lesson entitys.
  * @author pascal.perau
  */
 public class LessonDao {
@@ -40,7 +40,7 @@ public class LessonDao {
 	public Lesson createLesson(Lesson persistableLesson){
 		ContentValues values = new ContentValues();
 		values.put(DatabaseHelper.TABLE_LESSON_COLUMN_NAME, persistableLesson.getName());
-		values.put(DatabaseHelper.TABLE_LESSON_COLUMN_TEACHER, persistableLesson.getTeacher());
+		values.put(DatabaseHelper.TABLE_LESSON_COLUMN_TEACHER, persistableLesson.getTeacherId());
 		values.put(DatabaseHelper.TABLE_LESSON_COLUMN_ROOM, persistableLesson.getRoom());
 		values.put(DatabaseHelper.TABLE_LESSON_COLUMN_NOTE, persistableLesson.getNote());
 		long lessonId = db.insert(DatabaseHelper.TABLE_LESSON, null, values);
@@ -70,6 +70,12 @@ public class LessonDao {
 	    cursor.close();
 	    return lessons;
 	  }
+	  
+	public Lesson findLessonById(long id){
+		Cursor cursor = db.query(DatabaseHelper.TABLE_LESSON, columns, DatabaseHelper.TABLE_LESSON_COLUMN_ID + " = " + id, null, null, null, null);
+		cursor.moveToFirst();
+		return cursorToLesson(cursor);
+	}
 	
 	private Lesson cursorToLesson(Cursor cursor) {
 	    Lesson lesson = new Lesson();

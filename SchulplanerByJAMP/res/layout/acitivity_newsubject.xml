@@ -79,24 +79,26 @@
         android:inputType="text|textPersonName"
         android:textSize="20sp" />
 
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tVAddLehrerBez"
+        android:layout_alignLeft="@+id/EditTAddNameBez"
+        android:layout_alignRight="@+id/EditTAddNameBez"
+        android:layout_alignTop="@+id/tVAddLehrerBez"
+        android:background="@drawable/borderui"
+        android:ems="10"
+        android:text="AutoCompleteTextView" />
+
     <TextView
         android:id="@+id/tVAddLehrerBez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tVAddNameBez"
         android:layout_below="@+id/tVAddNameBez"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="26dp"
         android:text="Lehrer:"
         android:textSize="20sp" />
-
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tVAddLehrerBez"
-        android:layout_alignBottom="@+id/tVAddLehrerBez"
-        android:layout_alignLeft="@+id/EditTAddNameBez"
-        android:ems="10"
-        android:text="AutoCompleteTextView" />
 
 </RelativeLayout>
