@@ -35,16 +35,16 @@ public final class R {
         public static final int EditTAddNameBez=0x7f080004;
         public static final int EditTAddRaumBez=0x7f080001;
         public static final int Home=0x7f080008;
-        public static final int ListVSubjects=0x7f080041;
-        public static final int ListVSubjectsDetails=0x7f08003f;
+        public static final int ListVSubjects=0x7f080047;
+        public static final int ListVSubjectsDetails=0x7f080045;
         public static final int TextView36=0x7f080014;
         public static final int TextView37=0x7f080015;
         public static final int TextView38=0x7f080013;
         public static final int TextView39=0x7f080012;
         public static final int TextView45=0x7f080016;
-        public static final int action_settings=0x7f080044;
+        public static final int action_settings=0x7f08004a;
         public static final int autoCompleteTextView1=0x7f080007;
-        public static final int btnBackFromFaecher=0x7f080040;
+        public static final int btnBackFromFaecher=0x7f080046;
         public static final int btnBackFromNewSubject=0x7f080005;
         public static final int btnBackFromOptions=0x7f080011;
         public static final int btnDeleteStundenplan=0x7f08000d;
@@ -52,8 +52,8 @@ public final class R {
         public static final int btnOpenFaecher=0x7f08000e;
         public static final int btnOpenOptions=0x7f080009;
         public static final int btnOpenStundenplan=0x7f08000a;
-        public static final int btnSubjectAdd=0x7f080042;
-        public static final int btnSubjectDelete=0x7f080043;
+        public static final int btnSubjectAdd=0x7f080048;
+        public static final int btnSubjectDelete=0x7f080049;
         public static final int fri_h1=0x7f08001b;
         public static final int fri_h2=0x7f080020;
         public static final int fri_h3=0x7f080025;
@@ -62,6 +62,12 @@ public final class R {
         public static final int fri_h6=0x7f080034;
         public static final int fri_h7=0x7f080039;
         public static final int fri_h8=0x7f08003e;
+        public static final int horizontalScrollView1=0x7f08003f;
+        public static final int listView1=0x7f080040;
+        public static final int listView2=0x7f080041;
+        public static final int listView3=0x7f080042;
+        public static final int listView4=0x7f080043;
+        public static final int listView5=0x7f080044;
         public static final int mon_h1=0x7f080017;
         public static final int mon_h2=0x7f08001c;
         public static final int mon_h3=0x7f080021;
@@ -107,15 +113,18 @@ public final class R {
         public static final int activity_home=0x7f030001;
         public static final int activity_options=0x7f030002;
         public static final int activity_schedule=0x7f030003;
-        public static final int activity_subjects=0x7f030004;
+        public static final int activity_schedule2=0x7f030004;
+        public static final int activity_subjects=0x7f030005;
     }
     public static final class menu {
         public static final int home=0x7f070000;
+        public static final int schulplaner=0x7f070001;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int hello_world=0x7f050002;
+        public static final int title_activity_schulplaner=0x7f050003;
     }
     public static final class style {
         /** 

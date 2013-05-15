@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Home"
+            android:name="EPS.AppEW.SchulplanerByJAMP.Home"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="Options"></activity>
-        <activity android:name="Subjects"></activity>
-        <activity android:name="NewSubject"></activity>
-        <activity android:name="Schedule"></activity>
+        <activity android:name="EPS.AppEW.SchulplanerByJAMP.Options" >
+        </activity>
+        <activity android:name="EPS.AppEW.SchulplanerByJAMP.Subjects" >
+        </activity>
+        <activity android:name="EPS.AppEW.SchulplanerByJAMP.NewSubject" >
+        </activity>
+        <activity android:name="EPS.AppEW.SchulplanerByJAMP.Schedule" >
+        </activity>
+        <activity
+            android:name="EPS.AppEW.SchulplanerByJAMP.Schulplaner"
+            android:label="@string/title_activity_schulplaner" >
+        </activity>
     </application>
 
 </manifest>
