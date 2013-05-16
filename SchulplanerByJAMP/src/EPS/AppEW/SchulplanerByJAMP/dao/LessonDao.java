@@ -51,10 +51,16 @@ public class LessonDao {
 		return newLesson;
 	}
 	
+	/**
+	 * Deletes the {@link Lesson} from the database.
+	 * Also removes {@link WeekDay}s associated with the lessons id.
+	 * @param lesson
+	 */
 	public void deleteLesson(Lesson lesson) {
 	    long id = lesson.getId();
 	    System.out.println("Lesson deleted with id: " + id);
 	    db.delete(DatabaseHelper.TABLE_LESSON, DatabaseHelper.TABLE_LESSON_COLUMN_ID + " = " + id, null);
+	    db.delete(DatabaseHelper.TABLE_WEEKDAY, DatabaseHelper.TABLE_WEEKDAY_COLUMN_LESSONID + " = " + id, null);
 	  }
 
 	  public List<Lesson> getAllLessons() {

@@ -21,6 +21,8 @@ public class Subjects extends Activity {
 	private ListView lvSubjects;
 	
 	private ListView lvSubjectsDetails;
+	
+	private Lesson selectedLesson;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -33,9 +35,7 @@ public class Subjects extends Activity {
 		lessonDao.open();
 		teacherDAO = new TeacherDao(this);
 		teacherDAO.open();
-		final List<Lesson> lessons = lessonDao.getAllLessons();
-		System.out.println(lessons.size());
-		
+		final List<Lesson> lessons = lessonDao.getAllLessons();		
 		
 		//prepare views
 		lvSubjects = (ListView) findViewById(R.id.ListVSubjects); // Referenz der Liste auf das Control der View
@@ -47,6 +47,7 @@ public class Subjects extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
 				Lesson l = lessons.get(position);
+				selectedLesson = l;
 				String[] details = {l.getName(), teacherDAO.getTeacherOfId(l.getTeacherId()).getName(), l.getRoom()};
 			    lvSubjectsDetails.setAdapter(new ArrayAdapter<String>(Subjects.this, android.R.layout.simple_list_item_1, details));
 			}
@@ -57,6 +58,11 @@ public class Subjects extends Activity {
 	public void SubjectAdd_OnClick(View v) {
 		Intent myIntent = new Intent(v.getContext(), NewSubject.class);
 		startActivityForResult(myIntent, 0);
+	}
+	
+	public void SubjectDelete_OnClick(View v){
+		if(selectedLesson == null) return;
+		lessonDao.deleteLesson(selectedLesson);
 	}
 
 	public void BackFromFaecher_OnClick(View v) {

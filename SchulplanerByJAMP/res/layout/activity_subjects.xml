@@ -59,6 +59,7 @@
         android:background="@drawable/icon_delete"
         android:maxHeight="75dp"
         android:maxWidth="75dp"
+        android:onClick="SubjectDelete_OnClick"
         android:text="Löschen" />
 
 </RelativeLayout>
