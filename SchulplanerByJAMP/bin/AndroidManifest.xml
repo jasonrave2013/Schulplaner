@@ -34,6 +34,8 @@
             android:name="EPS.AppEW.SchulplanerByJAMP.Schulplaner"
             android:label="@string/title_activity_schulplaner" >
         </activity>
+        <activity android:name="ChooseSubject"></activity>
+        <activity android:name="SubjectDetails"></activity>
     </application>
 
 </manifest>
